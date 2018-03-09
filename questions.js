@@ -1,0 +1,2 @@
+﻿
+let questionsTextToParse = '(Which country was involoved?;Cuba;Hati;Isreal;France)#(What ship was blown up?;U.S.S. Maine;U.S.S. Texas;U.S.S. Rome;U.S.S. Alexander)#(When did congress declare war on spain?;April 25 1898;Febuary 19 1897;April 25 1897;Febuary 19 1899)';
