@@ -1,4 +1,4 @@
-﻿var questions;
+var questions;
 
 var questionIndex = 0;
 var overWhichOption;
@@ -6,7 +6,7 @@ var press;
 var correctAnswerIndex = 0;
 
 var score = 0;
-var timeLeft = 30;
+var timeLeft = 20;
 
 var state = 0;
 
@@ -25,8 +25,6 @@ function setup() {
 
 function draw() {
 
-    timeLeft -= 1 / 20;
-
     switch (state) {
         case 0:
 
@@ -36,7 +34,7 @@ function draw() {
             textAlign(CENTER);
             text("Causes of the Spanish American War Quiz!", width / 2, 0.9 * height / 3);
             textSize(25);
-            text("30 seconds, question right +3 seconds", width / 2, 1.2 * height / 3);
+            text("20 seconds, question right +2 seconds", width / 2, 1.2 * height / 3);
             text("question wrong -5 seconds.", width / 2, 1.4 * height / 3);
             text("Question right +1 score", width / 2, 1.6 * height / 3);
             text("The higher the score the better", width / 2, 1.8 * height / 3);
@@ -44,7 +42,7 @@ function draw() {
             fill(255);
             text("Press ENTER to start", width / 2, 2.2 * height / 3);
             if (EnterPressed) {
-                timeLeft = 30;
+                timeLeft = 20;
                 score = 0;
                 state = 1;
                 genNextQuestion()
@@ -73,7 +71,6 @@ function draw() {
 
             break;
         case 2:
-            timeLeft -= 1 / 20;
 
             fill(0);
             background(175,0,0)
@@ -89,7 +86,6 @@ function draw() {
             text("Time: " + timeLeft.toFixed(2), width - 100, 85);
             break;
         case 3:
-            timeLeft -= 1 / 20;
 
             fill(0);
             background(0, 175, 0)
@@ -115,7 +111,7 @@ function draw() {
             text("To restart press ENTER", width / 2, 1.5 * height / 3);
 
             if (EnterPressed) {
-                timeLeft = 30;
+                timeLeft = 20;
                 score = 0;
                 state = 1;
                 genNextQuestion()
@@ -131,7 +127,7 @@ function checkAnswer() {
             state = 3;
             timer = 3;
             score++;
-            timeLeft +=3;
+            timeLeft +=2;
         }
         else {
             state = 2;
@@ -222,8 +218,11 @@ function parse() {
     var questionTexts = questionsTextToParse.split("#");
     for (var i = 0; i < questionTexts.length; i++) {
         var questionAndAnswer = questionTexts[i].split(";");
-        if (questionAndAnswer.length != 5)
+        console.log(questionAndAnswer);
+        if (questionAndAnswer.length != 5) {
             console.log("Could not load question");
+            continue;
+        }
 
         var question = questionAndAnswer[0].substring(1, questionAndAnswer[0].length);
         var answers = [];
@@ -234,7 +233,7 @@ function parse() {
             else
                 answers[j] = questionAndAnswer[j].substring(0, questionAndAnswer[j].length-1);
         }
-
+        console.log("Loaded " + question);
         var q = new quizQuestion(question, answers[1], answers[2], answers[3], answers[4]);
         questions.push(q);
     }
