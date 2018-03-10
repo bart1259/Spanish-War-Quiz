@@ -150,8 +150,6 @@ function drawQuestion(index) {
     textSize(35);
     fill(220);
     textAlign(CENTER);
-    console.log(index);
-    console.log(questions);
     text(questions[index].question, width / 2, height / 6);
 }
 
@@ -218,9 +216,7 @@ function parse() {
     var questionTexts = questionsTextToParse.split("#");
     for (var i = 0; i < questionTexts.length; i++) {
         var questionAndAnswer = questionTexts[i].split(";");
-        console.log(questionAndAnswer);
         if (questionAndAnswer.length != 5) {
-            console.log("Could not load question");
             continue;
         }
 
@@ -233,7 +229,6 @@ function parse() {
             else
                 answers[j] = questionAndAnswer[j].substring(0, questionAndAnswer[j].length-1);
         }
-        console.log("Loaded " + question);
         var q = new quizQuestion(question, answers[1], answers[2], answers[3], answers[4]);
         questions.push(q);
     }
