@@ -37,7 +37,7 @@ function draw() {
             textAlign(CENTER);
             text("Causes of the Spanish American War Quiz!", width / 2, 0.9 * height / 3);
             textSize(25);
-            text("20 seconds, question right +2 seconds", width / 2, 1.2 * height / 3);
+            text("20 seconds, question right +1 second", width / 2, 1.2 * height / 3);
             text("question wrong -5 seconds.", width / 2, 1.4 * height / 3);
             text("Question right +1 score", width / 2, 1.6 * height / 3);
             text("The higher the score the better", width / 2, 1.8 * height / 3);
@@ -130,7 +130,7 @@ function checkAnswer() {
             state = 3;
             timer = 3;
             score++;
-            timeLeft +=2;
+            timeLeft +=1;
         }
         else {
             state = 2;
