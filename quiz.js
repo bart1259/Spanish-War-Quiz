@@ -1,3 +1,6 @@
+
+var questionsTextToParse = '(Which country revolted against spain?;Cuba;Mexico;Isreal;Portugal)#(What ship was blown up?;U.S.S.Maine; U.S.S.Texas; U.S.S.Rome; U.S.S.Alexander)#(When did congress declare war on spain?;April 25 1898;Febuary 19 1897;April 25 1897;Febuary 19 1899)#(Who lead the cuban revolution?;José Martí; William Randolph Hearst; William McKinley; Samuel Jackson)#(What type of warfare did Spain use?;Guerrilla warfare;Amphibious warfare;Nuclear warfare‎;Siege warfare‎)#(Which is not a cause of the Spanish American War?;Freedom of religion; Yellow Journalism; Blowing up of the U.S.S.Maine; Treatment of cuban people)#(What resource did Americans want from Cuba?; Sugar; Oil; Tobacco;Fresh Water)#(Yellow Journalism was ;dishonest; honest; logical; comedic)#(What type of governemnt did the Spanish have in Cuba?;Communist;Socailst;Democratic;Monarchic)#(Which phrase was used throughout the Spanish American War?;Remember the Maine;Remeber the Cubans;We shall defend our lands;Spain is Evil)';
+
 var questions;
 
 var questionIndex = 0;
